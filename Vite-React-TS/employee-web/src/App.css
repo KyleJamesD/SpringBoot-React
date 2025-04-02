@@ -101,5 +101,23 @@ td, th{
   text-align: center;
 }
 
+.editbtn{
+  border: 1px solid;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+}
 
+.delbtn{
+  border: 1px solid;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+}
 
