@@ -13,13 +13,21 @@ function App() {
   const [name, setName] = useState<string>(''); 
   const [manager, setManager] = useState<string>('');
   const [salary, setSalary] = useState<string>('');
+  const [search, setSearch] = useState<string>("");
+  const [filteredrows, setFilteredRows] = useState<Person[]>([]);
 
   useEffect(() => {
     getAllEmployees();
-
+    setFilteredRows(employees);
   }, []); // Only run once when the component mounts
 
-    const rows = employees.map((person, index) => (
+  useEffect(()=>{
+    setFilteredRows(employees.filter(person =>
+      person.name.toLowerCase().includes(search.toLowerCase())
+    )); 
+  },[search,employees]);
+
+    const rows = filteredrows.map((person, index) => (
       <tr key={index}>
         <td>{person.employeeId}</td>
         <td>{person.name}</td>
@@ -51,7 +59,7 @@ function App() {
       }
     }
 
-    const getAllEmployees=()=>{
+    const getAllEmployees= async ()=>{
       axios.get("http://localhost:8085/employees").then(((res)=>{
         console.log(res.data);
         setEmployees(res.data);
@@ -68,6 +76,10 @@ function App() {
 
     const handleSalaryChange = (e:React.ChangeEvent<HTMLInputElement>) => {
       setSalary(e.target.value);
+    };
+
+    const handleSearchChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+      setSearch(e.target.value);
     };
 
     const handleNewEmpSubmit = async () => {
@@ -141,7 +153,7 @@ function App() {
           <button className='addbtn' onClick={handleNewEmpSubmit}>{id ? "Update" : "Add"}</button>
           <button className='cancelbtn' onClick={handleCancel}>Cancel</button>
         </div>
-        <input className='searchinput' type='search' name='inputsearch' id='inputsearch' placeholder='Search Employee by Name'></input>
+        <input className='searchinput' type='search' value={search} onChange={handleSearchChange} name='inputsearch' id='inputsearch' placeholder='Search Employee by Name'></input>
       </div>
       <div className='tablediv'>
       <table className='table' border={1}>
