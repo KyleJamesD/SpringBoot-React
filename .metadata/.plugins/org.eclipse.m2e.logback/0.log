@@ -934,3 +934,6 @@
 2025-03-30 19:43:50,288 [Worker-12: Launching Executing test in C__Users_kyled_Desktop_SpringBoot-React_employee-service] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\kyled\Desktop\SpringBoot-React\employee-service":
 2025-03-30 19:43:50,288 [Worker-12: Launching Executing test in C__Users_kyled_Desktop_SpringBoot-React_employee-service] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -Ppom.xml -B -Dstyle.color=always test
 2025-04-02 08:16:06,873 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-04-02 11:11:56,241 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-04-08 08:03:16,273 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-04-11 13:02:04,487 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
